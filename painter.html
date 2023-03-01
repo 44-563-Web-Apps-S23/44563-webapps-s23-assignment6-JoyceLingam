@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Responsive</title>
+    </head>
+    <body>
+
+<h2>Painter entry by Joyce Meyer</h2>
+<h2>Getting input </h2>
+
+<form>
+    <label for="form1_Name">The Hidden Painter Name </label>
+    <input type ="password" id="form1_Name" name="form1_Name" min=10 max=50 step=2 value="Monet"> <br>
+
+    <label for="form1_Check">Guess the Painter </label>
+    <input type ="text" id="form1_Check" name="form1_Check" autofocus> <br>
+
+    <input type="button" onclick="checkPainter()" value="Check the Guess">
+</form>
+<p id="result">This text will be replaced </p>
+<div class="container-fluid">
+<img src="lemon.jpg" width="100" height="100" onclick="selectImage()" id="img1">
+<script>
+var useImage =1
+function selectImage(){
+   switch(useImage){
+       case 1:
+           document.getElementById("img1").src="lemon.jpg";           
+            useImage=useImage +1;
+            break;
+       case 2:
+       document.getElementById("img1").src="insulin.jpg";            
+           useImage=useImage +1;
+           break;
+       case 3:
+       document.getElementById("img1").src="Neem.jpg";           
+           useImage=1;
+           break;
+   }
+}
+</script>
+</div>
+
+</body>
+</html> 
+
+</body>
+</html> 
+<script> 
+    var good = 0;
+    var oops = 0;
+    function checkPainter (){
+        console.log("Getting form values")
+        Name = document.getElementById("form1_Name").value
+        Check = document.getElementById("form1_Check").value
+        out = document.getElementById("good")
+        if(Name == Check)
+        {
+            good=good+1;
+            alert("You got it right");
+            out.innerHTML = good
+        } else 
+        {
+            oops=oops+1;
+            alert("Sorry");
+            out.innerHTML = oops
+        }    
+    }
+    </script>
